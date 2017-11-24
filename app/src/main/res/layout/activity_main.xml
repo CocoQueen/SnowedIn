@@ -7,7 +7,7 @@
     android:background="#200f"
     tools:context="com.example.coco.snowedin.MainActivity">
 
-    <com.example.coco.snowedin.view.FallingView
+    <com.example.coco.snowedin.view.SnowedInView
         android:id="@+id/mFall"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

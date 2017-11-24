@@ -14,11 +14,11 @@ import java.util.List;
  * Created by coco on 2017/11/24.
  */
 
-public class FallingView extends View {
+public class SnowedInView extends View {
     private Context mContext;
     private AttributeSet mAttrs;
 
-    private List<FallingObject>list;
+    private List<SnowedInObject>list;
 
     private int viewWidth;
     private int viewHeight;
@@ -31,13 +31,13 @@ public class FallingView extends View {
 //    private int snowY;
 
 
-    public FallingView(Context context) {
+    public SnowedInView(Context context) {
         super(context);
         mContext = context;
         init();
     }
 
-    public FallingView(Context context, @Nullable AttributeSet attrs) {
+    public SnowedInView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
         mAttrs = attrs;
@@ -86,13 +86,13 @@ public class FallingView extends View {
            }, reTime);
        }
     }
-    public void addFallingObject(final FallingObject fallingObject, final int num){
+    public void addFallingObject(final SnowedInObject fallingObject, final int num){
         getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
             @Override
             public boolean onPreDraw() {
                 getViewTreeObserver().removeOnPreDrawListener(this);
                 for (int i = 0; i < num; i++) {
-                    FallingObject newObject =new FallingObject(viewWidth,viewHeight,fallingObject.builder);
+                    SnowedInObject newObject =new SnowedInObject(viewWidth,viewHeight,fallingObject.builder);
                     list.add(newObject);
                 }
                 invalidate();

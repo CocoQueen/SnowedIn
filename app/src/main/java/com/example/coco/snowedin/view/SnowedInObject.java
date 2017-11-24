@@ -12,7 +12,7 @@ import java.util.Random;
  * Created by coco on 2017/11/24.
  */
 
-public class FallingObject {
+public class SnowedInObject {
     private int initY;
     private int initX;
     private Random random;
@@ -43,7 +43,7 @@ public class FallingObject {
 
     private static final float HALF_PI = (float) (Math.PI / 2);
 
-    public FallingObject(int parentWidth, int parentHeight, Builder builder) {
+    public SnowedInObject(int parentWidth, int parentHeight, Builder builder) {
         random = new Random();
         this.parentWidth = parentWidth;
         this.parentHeight = parentHeight;
@@ -61,7 +61,7 @@ public class FallingObject {
         objectHeight = bitmap.getHeight();
     }
 
-    private FallingObject(Builder builder) {
+    private SnowedInObject(Builder builder) {
         this.builder = builder;
         initSpeed = builder.initSpeed;
         bitmap = builder.bitmap;
@@ -117,8 +117,8 @@ public class FallingObject {
             return this;
         }
 
-        public FallingObject build() {
-            return new FallingObject(this);
+        public SnowedInObject build() {
+            return new SnowedInObject(this);
         }
     }
 
